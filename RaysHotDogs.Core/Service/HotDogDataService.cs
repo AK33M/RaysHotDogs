@@ -1,10 +1,6 @@
 ﻿using RaysHotDogs.Core.Model;
 using RaysHotDogs.Core.Repository;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RaysHotDogs.Core.Service
 {
