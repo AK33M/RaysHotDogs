@@ -1,13 +1,7 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using RaysHotDogs.Core.Service;
 using RaysHotDogs.Core.Model;
@@ -15,7 +9,7 @@ using RaysHotDogs.Utility;
 
 namespace RaysHotDogs
 {
-    [Activity(Label = "Hot Dog Detail", MainLauncher = true)]
+    [Activity(Label = "Hot Dog Detail")]
     public class HotDogDetailActivity : Activity
     {
         private ImageView hotDogImageView;
