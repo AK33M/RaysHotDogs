@@ -6,6 +6,7 @@ using Android.Widget;
 using RaysHotDogs.Core.Service;
 using RaysHotDogs.Core.Model;
 using RaysHotDogs.Utility;
+using Android.Content;
 
 namespace RaysHotDogs
 {
@@ -31,8 +32,10 @@ namespace RaysHotDogs
 
             SetContentView(Resource.Layout.HotDogDetailView);
 
-            HotDogDataService dataService = new HotDogDataService();
-            selectedHotDog = dataService.GetHotDogById(1);
+            dataService = new HotDogDataService();
+
+            var selectedHotDogId = Intent.Extras.GetInt("selectedHotDogId");
+            selectedHotDog = dataService.GetHotDogById(selectedHotDogId);
 
             FindViews();
             BindData();
@@ -79,10 +82,13 @@ namespace RaysHotDogs
         {
             var amount = Int32.Parse(amountEditText.Text);
 
-            var dialog = new AlertDialog.Builder(this);
-            dialog.SetTitle("Confirmation");
-            dialog.SetMessage("Your hot dog has been added to your cart!");
-            dialog.Show();
+            var intent = new Intent();
+            intent.PutExtra("selectedHotDogId", selectedHotDog.Id);
+            intent.PutExtra("amount", amount);
+
+            SetResult(Result.Ok, intent);
+
+            this.Finish();
         }
     }
 }

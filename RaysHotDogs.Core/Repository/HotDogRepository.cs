@@ -47,16 +47,16 @@ namespace RaysHotDogs.Core.Repository
 
         public List<HotDog> GetFavoriteHotDogs()
         {
-            //IEnumerable<HotDog> hotDogs =
-            //    from hotDogGroup in hotDogGroups
-            //    from hotDog in hotDogGroup.HotDogs
-            //    where hotDog.IsFavourite
-            //    select hotDog;
+            IEnumerable<HotDog> hotDogs =
+                from hotDogGroup in hotDogGroups
+                from hotDog in hotDogGroup.HotDogs
+                where hotDog.IsFavourite
+                select hotDog;
 
-            //return hotDogs.ToList<HotDog>();
+            return hotDogs.ToList<HotDog>();
 
-            return hotDogGroups.Select(x => x.HotDogs.SingleOrDefault(hd => hd.IsFavourite)).ToList();
-            
+            //return hotDogGroups.Select(x => x.HotDogs.SingleOrDefault(hd => hd.IsFavourite)).ToList();
+
         }
 
 
