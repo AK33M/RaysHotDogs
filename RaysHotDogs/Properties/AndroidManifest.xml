@@ -12,14 +12,9 @@
 	<uses-permission android:name="com.companyname.rayshotdogs.permission.MAPS_RECEIVE" />
 	<uses-permission android:name="android.permission.CAMERA" />
 	<permission android:name="com.companyname.rayshotdogs.permission.MAPS_RECEIVE" android:protectionLevel="signature" />
-  
-	<application>
-    <meta-data android:name="com.google.android.maps.v2.API_KEY"
-               android:value="AIzaSyCjXu1gn-Ex4c3EqIPhwIYH-IYMAnch044" />
-    <meta-data android:name="com.google.android.gms.version"
-               android:value="@integer/google_play_services_version" />
-  </application>
-  <application  android:label="Ray's Hot Dogs"
-                android:allowBackup="true">    
-  </application>
+	<application android:icon="@drawable/appicon">
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCjXu1gn-Ex4c3EqIPhwIYH-IYMAnch044" />
+		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+	</application>
+	<application android:label="Ray's Hot Dogs" android:allowBackup="true"></application>
 </manifest>
